@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>button </title>
+</head> 
+<style>
+.sbtn
+{
+padding:12px 18px;
+font-size: 25px;
+color:white;
+background-color:green;
+border:none;
+border-radius:4px;
+}
+.ibtn
+{
+padding:12px 18px;
+font-size: 25px;
+color:white;
+background-color:orange;
+border:none;
+border-radius:4px;
+}
+.wbtn
+{
+padding:12px 18px;
+font-size: 25px;
+color:white;
+background-color:blue;
+border:none;
+border-radius:4px;
+}
+.ebtn
+{
+padding:12px 18px;
+font-size: 25px;
+color:white;
+background-color:green;
+border:none;
+border-radius:4px;
+} 
+
+/* Click Button  */
+
+.btn1
+{
+padding:12px 15px;
+background-color: blue;
+font-size: 25px;
+color: white;
+outline: none;
+border-radius: 12px;
+font-family: Arial;
+}
+.btn1:hover
+{
+background-color: darkblue;
+color: gold;
+}
+.btn1:active
+{
+    transform: translateY(2px);
+    /* transform: translateX(2px); */
+    /* transform: scale(1.1); */
+    /* transform: rotate(10deg) */
+
+
+}
+
+
+
+/* Music Button */
+
+.btn2
+{
+    padding: 14px 16px;
+    background-color:#f4511e;
+    font-size: 20px;
+    color: cornsilk;
+    border-radius: 8px;
+    font-family: Arial;
+    width: 200px;
+}
+.btn2 span:after
+{
+    content: '\266B';
+    margin: 8px;
+    opacity: 0;
+    transition: 0.8s;
+}
+.btn2:hover span
+{
+    padding-right: 30px;
+    transition: 0.8s;
+}
+.btn2:hover span:after
+{
+    opacity: 1;
+}
+
+</style>
+<body>
+<input type="button" value="Success" class="sbtn">
+<input type="button" value="Info" class="ibtn">
+<input type="button" value="Warning" class="wbtn">
+<input type="button" value="Error" class="ebtn"><br><br>
+
+
+
+<button class="btn1">Click Me</button>
+
+
+<button class="btn2"><span>Music</span></button>
+
+
+ 
+</body>
+</html>
