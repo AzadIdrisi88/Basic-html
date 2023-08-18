@@ -1,0 +1,9 @@
+.main
+{
+    width: 800px;
+    height: 500px;
+    background-color: dodgerblue;
+    font-size: 40px;
+    font-family: verdana;
+    text-transform: capitalize;
+}
