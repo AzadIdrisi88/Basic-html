@@ -1,0 +1,433 @@
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/extjs/packages/ext_theme_crisp/build/resources/ext-theme-crisp-all-embedded-css/ext.axd?v=28986" id="ext-theme" />
+    <link type="text/css" rel="stylesheet" href="/extnet/resources/css/extnet-all-embedded-css/ext.axd?v=28986" id="extnet-styles" />
+    <script type="text/javascript" src="/extjs/ext-all-js/ext.axd?v=28986"></script>
+    <script type="text/javascript" src="/extjs/packages/ext_theme_crisp/build/ext-theme-crisp-js/ext.axd?v=28986"></script>
+    <script type="text/javascript" src="/extnet/extnet-all-js/ext.axd?v=28986"></script>
+
+    <script type="text/javascript" src="/extnet/extnet-init-js/ext.axd?0ab07706f87246548b04509672e971ed"></script>
+    <title>Bihar Public Service Commision Portal Forget Password</title>
+    <link rel="icon" href="/resources/images/favicon.ico?v=1.1"> 
+    <style>
+        
+    .maincontainer {
+            background-color:#F6D8CE;
+            font-family:'Californian FB';
+            width: 700px;
+            border-style: solid;
+            border-width:1px;
+            border-color:#FF8C00;
+            padding:6px;
+    }
+
+         .displayFieldstyle {
+            font-family: Cambria;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .top_td {
+            background-color: #FDF7C8;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-style: solid;
+            border-color: #FBBD80;
+            border-width: 1px;
+            font-family: Cambria;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .table_panel {
+            width:600px;
+            /*margin-top: 50px;*/
+            /*border-bottom-style: solid;
+            border-bottom-color: #cfd0d0;
+            border-bottom-width: 1px;*/
+            border-radius: 4px;
+            padding: 5px;
+            height:150px;
+
+        }
+        .page {
+            padding-top:30px;
+        }
+        .container {
+            max-width:650px;
+            background-color:#dfe2e4;
+            border-style:solid;
+            border-color:#FF8C00;
+            border-bottom-width:3px;
+            border-left-width:1px;
+            border-right-width:1px;
+        }
+        .upper-area {
+            background-color:#FF8C00;
+            padding-left:0px;
+            height:70px;
+        }
+        .Heading {
+            font-family:Cambria;
+            font-size:19px;
+            color:#dfe2e4;
+            font-weight:bold;
+            text-shadow:1px 2px 4px #D56C05;
+        }
+        .Heading2 {
+            font-family:Cambria;
+            font-size:15px;
+            color:#fbf9f9;
+        }
+        .boady {
+            padding:20px;
+            background-color:#FFFFFF;
+        }
+        .captchaarea {
+            background-color:#A52611;
+            margin-top:30px;
+            max-width:400px;
+            border-radius:4px;
+        }
+        .captcha {
+            background-color:#fbf9f9;
+            border-radius:4px;
+            width:390px;
+        }
+        .captchatext {
+            background-color:#F8ED95;
+            border-radius:4px;
+            width:365px;
+            height:40px;
+
+        }
+        .captchainput {
+            height:30px;
+            width:300px;
+            border-radius:5px;
+            font-family:Cambria;
+            font-size:17px;
+            color:#D56C05;
+            font-weight:800;
+            letter-spacing:5px;
+        }
+        :focus:-ms-input-placeholder
+        {
+            opacity: 0.5;
+        }
+        .refreshimage {
+            width:28px;
+            height:28px;
+        }
+        .refreshimage:hover {
+            width:28px;
+            height:28px;
+            -ms-transform: rotate(225deg); /* IE 9 */
+            -webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
+            transform: rotate(225deg);
+        }
+        .DownloadButton {
+            margin-top:20px;
+            font-family:Arial;
+            font-weight:700;
+            font-size:16px;
+            color:#FFFFFF;
+            background-color:#FF8C00;
+            text-shadow:1px 3px 3px #C26102;
+            text-align:center;
+            border-radius:3px;
+            width:200px;
+            height:32px;
+            padding-top:13px;
+            cursor:pointer;
+        }
+        .DownloadButton:hover {
+            margin-top:20px;
+            font-family:Arial;
+            font-weight:700;
+            font-size:16px;
+            color:#FFFFFF;
+            background-color:#FF8C00;
+            text-shadow:1px 2px 2px #FF8C00;
+            text-align:center;
+            border-radius:3px;
+            width:200px;
+            height:32px;
+            padding-top:13px;
+            cursor:pointer;
+        }
+        .DownloadButton:active {
+            margin-top:20px;
+            font-family:Arial;
+            font-weight:700;
+            font-size:16px;
+            color:#FADABA;
+            background-color:#FF8C00;
+            text-shadow:1px 2px 2px #FF8C00;
+            text-align:center;
+            border-radius:3px;
+            width:200px;
+            height:32px;
+            padding-top:13px;
+            cursor:pointer;
+        }
+
+        body {
+             background-image: url("BPSC_PORTAL/resources/icons/BPSC-Logo-WaterMark.png");
+        }
+        #drpExamID-labelEl
+        {
+            display:none;
+        }
+        #drpExamID-triggerWrap
+        {
+            width:300px;
+        }
+        .unselectable{
+     background-color: #ddd;
+     cursor: not-allowed;
+
+        }
+    </style>
+    <script>
+        var SendingDetailsTo = "Mobile";
+        var enabledisableSendTo = function () {
+            if (App.Rbtn_SendToMobile.getValue() == 1) {
+
+                Ext.getCmp("Rbtn_SendToEmail").setValue(false);
+                Ext.getCmp("Rbtn_SendToMobile").setValue(true);
+                SendingDetailsTo = "Mobile";
+                console.log(SendingDetailsTo);
+            }
+            else if (App.Rbtn_SendToEmail.getValue() == 1) {
+
+                Ext.getCmp("Rbtn_SendToMobile").setValue(false);
+                Ext.getCmp("Rbtn_SendToEmail").setValue(true);
+                SendingDetailsTo = "Email";
+                console.log(SendingDetailsTo);
+            }
+            else {
+                Ext.getCmp("Rbtn_SendToEmail").setValue(false);
+                Ext.getCmp("Rbtn_SendToMobile").setValue(true);
+                SendingDetailsTo = "Mobile";
+                console.log(SendingDetailsTo);
+            }
+        }
+        var HideDropdown = function () {
+            var len = Ext.getCmp("txtRegNumber").getValue();
+            if (len == '' || len == null) {
+                document.getElementById("ExamTd").setAttribute('class', 'none');
+                document.getElementById('drpExamID-inputWrap').style.display = "block";
+            }
+            else {
+                document.getElementById("ExamTd").setAttribute('class', 'unselectable');
+                document.getElementById('drpExamID-inputWrap').style.display = "none";
+                App.drpExamID.clearValue();
+            }
+        }
+        var onAdvSelect = function () {
+            //debugger
+            var AdvId = App.drpExamID.getValue();
+            if ((AdvId != null || AdvId != 0 || AdvId != '') && AdvId > 0) {
+                App.txtRegNumber.setValue('');
+                Ext.getCmp("txtRegNumber").setReadOnly(true);
+            }
+        }
+        var validateSendOtp = function () {
+            //var AdvId = App.drpExamID.getValue();
+            if ((App.txtRegNumber.getValue() == null || App.txtRegNumber.getValue() == '') && (App.drpExamID.getValue() == null || App.drpExamID.getValue() == '')) {
+                Ext.Msg.alert('Validate!!!', 'Please Enter your Registration Number Or Select Exam...');
+                return false;
+            }
+            if (App.txtMobileNo.getValue() == null || App.txtMobileNo.getValue() == '') {
+                Ext.Msg.alert('Validate!!!', 'Please Enter your Registered Mobile Number...');
+                
+                return false;
+            }
+            if (App.txtDOB.getValue() == null || App.txtDOB.getValue() == '') {
+                Ext.Msg.alert('Validate!!!', 'Please Enter your date of birth...');
+
+                return false;
+            }
+            if (App.Rbtn_SendToMobile.getValue() == false && App.Rbtn_SendToEmail.getValue() == false) {
+                Ext.Msg.alert('Validation Failed', 'Please Select Send Login Details Send To ..');
+
+                return false;
+            }
+            if (document.getElementById('CaptchaText').value == null || document.getElementById('CaptchaText').value == '') {
+                Ext.Msg.alert('Validate!!!', 'Please Enter your Captcha Code...');
+
+                return false;
+            }
+            
+            
+            
+            return true;
+        }
+
+        function RetrievePassword() {
+           
+            if (!validateSendOtp())
+                return false;
+            var data = {
+                DOBDate: ((App.txtDOB.getValue().getYear() + 1900) + '-' + (App.txtDOB.getValue().getMonth() + 1) + '-' + App.txtDOB.getValue().getDate() + ' 00:00:00.000'),
+            }           
+            
+            if (SendingDetailsTo == "Mobile") {
+                App.SettingMessengerType.setValue("Mobile No.");
+            }
+            else {
+                App.SettingMessengerType.setValue("EmailID");
+            }
+            Ext.Msg.wait('Sending. Please wait....', 'Sending...');
+            //console.log(JSON.stringify(data));
+            App.direct.RetrievePassword(JSON.stringify(data), App.txtRegNumber.getValue(), App.txtMobileNo.getValue(), App.drpExamID.getValue(), document.getElementById('CaptchaText').value,SendingDetailsTo, {
+                success: function (result) {
+                    console.log(result);
+                    document.getElementById('EndprocessDiv').style.display = "block";
+                    document.getElementById('page').style.display = "none";
+                    Ext.Msg.hide();
+                    document.getElementById('RegisteredType').innerHTML = '<b>' + App.SettingMessengerType.getValue() + '</b>';
+                },
+
+                failure: function (result) {
+                    Ext.Msg.alert('Error!!!', result);
+                }
+            });                
+    }
+
+
+        MyApp = (function () {
+            return {
+                init: function () {
+                    Ext.getCmp("Rbtn_SendToMobile").setValue(true);
+                    SendingDetailsTo = "Mobile";
+                }
+            };
+        })();
+
+        Ext.onReady(MyApp.init, MyApp);
+
+        function showUser() {
+            document.getElementById('cID').src = "/AdmissionProcess/ForgetPassword/GetCaptchaImage" + "/" + (new Date()).getTime();
+    }
+    </script>
+</head>
+<body align="center" background="/resources/icons/BPSC-Logo-WaterMark.png"  alt=""> 
+
+     
+
+<div id="page" class="page" align="center">
+       <div class="container" align="center">
+            <div class="upper-area">
+                <table border="0" align="center" class="" style="width:650px">
+                        <tr>
+                            <td align="center"><img src="/resources/images/logo.png" style="width:190px;height:60px" alt=""></td>
+                            <td align="center"><font class="Heading">BIHAR PUBLIC SERVICE COMMISSION</font><br/><font class="Heading2">Reset Password</font></td>
+                             <div id="App.SettingMessengerType_Container"></div>
+                        </tr>
+                </table>
+            </div>
+                
+
+             <div class="boady">
+   		        <table border="0" align="center" class="table_panel">
+                <tbody>
+                   
+                       <tr>
+						   <td class="top_td" align="Left"><b>Enter Registration Number:</b></td> 
+                           <td colspan="2"  width="400px" class="top_td" align="Left"> 
+                              <div id="App.txtRegNumber_Container"></div>  
+                           </td> 
+					   </tr> 
+                    <tr id="OrTd">
+						    
+                           <td class="top_td" align="center" colspan="2"><b>Or:</b>
+                           </td> 
+					   </tr> 
+                    <tr id="ExamTd">
+						   <td class="top_td" align="Left"><b>Select Exam:</b></td> 
+                           <td colspan="2"  width="400px" class="top_td" align="Left"> 
+                              <div id="App.drpExamID_Container"></div>
+                           </td> 
+					   </tr> 
+                     <tr>
+						   <td class="top_td" align="Left"><b>Enter DOB : *</b></td> 
+                           <td colspan="2"  width="400px" class="top_td" align="Left"> 
+                              <div id="App.txtDOB_Container"></div>  
+                           </td> 
+					  </tr> 
+                    
+                                                              
+                       <tr>
+						   <td class="top_td" align="Left"><b>Enter Mobile Number: *</b> </td> 
+                           <td colspan="2"  width="400px" class="top_td" align="Left"> 
+                              <div id="App.txtMobileNo_Container"></div>  </td> 
+					   </tr>  
+                    <tr>
+                        <td class="top_td" align="Left"><b>Send Login Details To: *</b> </td> 
+                        <td colspan="2"  width="400px" class="top_td" align="Left">
+                            <div id="App.SendDetailsTo_Container"></div></td>
+                    </tr>
+                       
+                                              
+                      
+				</tbody>
+        		</table>
+            </div>
+            </div>
+
+    <!-- Captcha area start here-->
+    
+    
+            
+                        <div class="captchaarea">
+                            <table class="middle" align="center" border="0">
+                                <tr>
+                                       
+                                    <td align="center" style="width:200px" colspan="2" class="captcha"><img id="cID" src="/AdmissionProcess/AdmitCardDashboard/GetCaptchaImage" style="width:250px;height:35px" alt="image"/></td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td class="captchatext" colspan="0" align="center"><input type="text" class="captchainput" name="txtCaptcha" id="CaptchaText"   autocomplete = "off" placeholder="Enter Above Text" /></td>
+                                    <td style="width:30px" align="center"><input type="image" class="refreshimage" name="button" value="Search" onclick="showUser()" src="/resources/images/RefreshCaptcha.png"/></td>
+                                </tr>                                                          
+                            </table>
+                        </div>
+                    <table>
+                        <tr>
+                            <td align="center">
+                                 
+                                <div class="DownloadButton" onclick="RetrievePassword();">Retrieve Password </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+
+        
+          
+         
+    
+
+    
+</div>
+
+    <div style="display:none" id="EndprocessDiv">
+     <table align="center" class="maincontainer" border="0">
+        <tr>
+            <td>
+                <table>
+                    <tr><td align="center">&nbsp;</td></tr>
+                    <tr>
+                        <td>
+                            Dear Candidate Your UserName & Password has been sent to your Registered <span id="RegisteredType"></span>    .
+                        </td>
+                    </tr>
+                    <tr><td align="center">&nbsp;</td></tr>
+                 </table>   
+            </td>
+        </tr>
+    </table>
+</div> 
+
+</body>
+</html>

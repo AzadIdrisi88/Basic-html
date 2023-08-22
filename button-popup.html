@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop-up</title>
+    <style>
+      .box
+      {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        margin: 80px;
+        position: relative;
+
+      }
+      .btn
+      {
+        width: 100%;
+        font-size: 30px;
+        background-color: rgba(0,0,0,0.7);
+        color: white;
+        position: absolute;
+        left: 0px;
+        top: -39px;
+        /* bottom: -39px; */
+        opacity: 0;
+        transition: 1s;
+      }
+      .box:hover .btn
+      { 
+        top: 0px;
+        /* bottom: 0px; */
+        opacity: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <img src="image/sea.jpeg" width="100%" height="100%">
+    <input type="button" value="Add To Cart" name="btn" class="btn">
+
+    </div>
+    
+</body>
+</html>
