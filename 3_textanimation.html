@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textanimation</title>
+    <style>
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: black;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            font-weight: 1000;
+            animation: colorchange 8s infinite;
+            animation-fill-mode: forwards;
+            /* animation-direction: alternate-reverse; */
+
+        }
+
+        p {
+            font-size: 10px;
+            margin-top: 8rem;
+        }
+
+        @keyframes colorchange {
+            0% {
+                color: #fff; /* Starting color */
+            }
+
+            25% {
+                color: #ff00ff; /* Change to magenta at 25% */
+            }
+
+            50% {
+                color: yellow; /* Change to yellow at 50% */
+            }
+
+            75% {
+                color: #ff00ff; /* Change back to magenta at 75% */
+            }
+
+            100% {
+                color: #fff; /* Return to starting color */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        SOO BEAUTIFUL
+        <p>codewithashhad_08</p>
+    </div>
+
+</body>
+
+</html>
